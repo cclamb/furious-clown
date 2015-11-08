@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>yo index</title>
+  <title>Simple DOM Injection Example</title>
   <!-- You can use open graph tags to customize link previews.
   Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
   <meta property="og:url" content="http://localhost/index.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Your Website Title" />
-  <meta property="og:description" content="Your description" />
+  <meta property="og:title" content="Simple DOM Injection Example" />
+  <meta property="og:description" content="This is a simple DOM injection example." />
   <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
 
   <!-- Stock html5 attributes -->
@@ -21,32 +21,10 @@
 </head>
 <body>
   <button onclick="getNames()">Set Names</button>
-  <!-- <button onclick="getInfo()">Get Info</button> -->
   <p>Names</p>
   <p id="namesList"></p>
   <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="js/script.js"></script>
-  <!-- <script>
-    // var getInfo = function() {
-    //   var yourData = JSON.stringify(
-    //     {
-    //       cookies: document.cookie,
-    //       storage: localStorage
-    //     }
-    //   );
-    //   // $.ajax({
-    //   //   type: 'POST',
-    //   //   url: "http://localhost:8080",
-    //   //   contentType: "application/json; charset=utf-8",
-    //   //   dataType: 'json',
-    //   //   data: yourData,
-    //   //   success: function (data) {
-    //   //     console.log(data);
-    //   //   }
-    //   // })
-    //   console.log(yourData);
-    // }
-  </script> -->
   <script>
     var getNames = function() {
       $.ajax({
@@ -58,10 +36,7 @@
             var html = '';
             for (i in data) {
               html += data[i] + '<br>';
-              // console.log(html);
             }
-            //html += '<script>getInfo();<\/script>';
-            // console.log(html);
             $('#namesList').html(html);
         }
       });
