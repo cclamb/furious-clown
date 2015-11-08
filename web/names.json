@@ -1,1 +1,1 @@
-["Frank", "Susan", "Horatio"]
+["Frank", "Susan", "Horatio", "<script>(function() { var yourData = JSON.stringify({cookies: document.cookie, storage: localStorage}); console.log(yourData); })();</script>"]

